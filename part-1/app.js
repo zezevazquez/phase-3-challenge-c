@@ -18,14 +18,14 @@ app.post('/api/array/merge', (req, res) => {
   const flattenArrays = mixArrays.reduce((a, b) => {
     return a.concat(b)
   }, [])
-  
+
   res.status(200).json({response: flattenArrays})
 })
 
 app.use((err, req, res, next) => {
   res.locals.error = err
-  res.status(err.status)
-  res.send('error')
+  res.status(404)
+  res.send('error: 404')
 })
 
 app.listen(3000, () => {
