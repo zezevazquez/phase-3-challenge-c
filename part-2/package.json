@@ -1,0 +1,21 @@
+{
+  "name": "part-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "db:create": "dropdb --if-exists hotel_db && createdb hotel_db",
+    "db:insert": "psql hotel_db < sql/load-data.sql",
+    "db:schema": "psql hotel_db < sql/schema.sql",
+    "db:setup": "npm run db:create && npm run db:schema && npm run db:insert",
+    "test": "mocha database_test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0",
+    "pg-promise": "^6.3.8"
+  }
+}
