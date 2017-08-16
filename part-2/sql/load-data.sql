@@ -4,5 +4,5 @@ FROM '/Users/zezemanolo/Desktop/Zeze/learnersguild/phase-challenges/phase3_final
 COPY guests(id, name, email)
 FROM '/Users/zezemanolo/Desktop/Zeze/learnersguild/phase-challenges/phase3_final/phase-3-challenge-c/part-2/data/guests.csv' DELIMITER ',' CSV HEADER;
 
-COPY rooms(id, number, capacity)
+COPY rooms(id, room_number, capacity)
 FROM '/Users/zezemanolo/Desktop/Zeze/learnersguild/phase-challenges/phase3_final/phase-3-challenge-c/part-2/data/rooms.csv' DELIMITER ',' CSV HEADER;

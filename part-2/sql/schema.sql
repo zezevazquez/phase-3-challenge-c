@@ -6,13 +6,26 @@ CREATE TABLE guests(
 
 CREATE TABLE bookings(
   id SERIAL PRIMARY KEY,
-  room_id VARCHAR(100) NOT NULL,
-  guest_id VARCHAR(100) NOT NULL,
+  room_id INTEGER NOT NULL,
+  guest_id INTEGER NOT NULL,
   check_in DATE NOT NULL,
   check_out DATE NOT NULL
 );
 CREATE TABLE rooms(
   id SERIAL PRIMARY KEY,
-  number VARCHAR(100) NOT NULL,
+  room_number VARCHAR(100) NOT NULL,
   capacity INTEGER NOT NULL
 );
+
+
+-- CASE
+-- 		WHEN capacity > 2 THEN true
+-- 		ELSE false
+-- 	END
+--
+--   SELECT room_number, capacity,
+-- CASE
+-- 	WHEN date > check_in AND date < check_out THEN 'UNAVAILABLE'
+-- 	ELSE 'AVAILAVLE'
+-- END
+-- FROM rooms JOIN bookings ON bookings.room_id = rooms.id
