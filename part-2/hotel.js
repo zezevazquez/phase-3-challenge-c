@@ -1,8 +1,8 @@
 #! /usr/local/bin/node
 
-const fs = require('fs')
-
-const {allGuests, allRooms, allBookings} = require('./database')
+const { allGuests } = require('./commands/guests')
+const { roomAvailability } = require('./commands/rooms')
+const { allBookings } = require('./commands/bookings')
 
 
 
@@ -13,7 +13,7 @@ switch (command) {
     allGuests()
     break
   case 'rooms':
-    allRooms()
+    roomAvailability()
     break
   case 'bookings':
     allBookings()
