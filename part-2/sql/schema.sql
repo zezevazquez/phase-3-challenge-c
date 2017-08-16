@@ -1,0 +1,18 @@
+CREATE TABLE guests(
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE bookings(
+  id SERIAL PRIMARY KEY,
+  room_id INTEGER NOT NULL,
+  guest_id INTEGER NOT NULL,
+  check_in DATE NOT NULL,
+  check_out DATE NOT NULL
+);
+CREATE TABLE rooms(
+  id SERIAL PRIMARY KEY,
+  room_number VARCHAR(100) NOT NULL,
+  capacity INTEGER NOT NULL
+);
