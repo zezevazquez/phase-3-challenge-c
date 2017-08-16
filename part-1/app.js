@@ -6,11 +6,8 @@ app.use(bodyParser)
 
 app.get('/api/shout/:word', (req, res) => {
   const shout = req.params.word.toUpperCase() + '!!!'
-  res.json({
-    method: req.method,
-    response: shout,
-    status: res.statusCode
-  })
+  res.set({'content-type': 'application/text'})
+  res.status(200).send(shout)
 })
 
 app.post('/api/array/merge', (req, res) => {
@@ -21,7 +18,8 @@ app.post('/api/array/merge', (req, res) => {
   const flattenArrays = mixArrays.reduce((a, b) => {
     return a.concat(b)
   }, [])
-  res.json({response: flattenArrays})
+  
+  res.status(200).json({response: flattenArrays})
 })
 
 app.use((err, req, res, next) => {
@@ -33,7 +31,3 @@ app.use((err, req, res, next) => {
 app.listen(3000, () => {
   console.log('listening!');
 })
-
-//
-// GET /api/shout/:word
-// POST /api/array/merge
